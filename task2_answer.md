@@ -180,7 +180,7 @@ processingLock.delete(friendName);
 ## 排查过程
 
 1. **代码审查**: 阅读 `buggy_bot.js` 源代码，分析消息处理流程
-2. **对比参考实现**: 查看 `feishu-bot/src/event-handler.ts` 中的正确去重实现
+2. **对比参考实现**: 将上下文给到多个AI（gemini,opencode,chatgpt,cloude），询问不同模块的逻辑，进行对比。
 3. **识别问题模式**:
    - 第 76 行使用 `includes(text)` 进行文本去重 → 不可靠
    - 第 93 行创建定时器但未清除旧定时器 → 会重复执行
